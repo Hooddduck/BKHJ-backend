@@ -12,7 +12,10 @@ import javax.validation.constraints.Size;
 @Table(name = "users", 
     uniqueConstraints = { 
       @UniqueConstraint(columnNames = "username"),
-      @UniqueConstraint(columnNames = "email") 
+      @UniqueConstraint(columnNames = "email"),
+      @UniqueConstraint(columnNames = "usersId"),
+      @UniqueConstraint(columnNames = "residentnumber"),
+      @UniqueConstraint(columnNames = "nickname")
     })
 public class User {
   @Id
@@ -32,6 +35,39 @@ public class User {
   @Size(max = 120)
   private String password;
 
+  @NotBlank
+  @Size(max = 50)
+  private String usersId;
+
+  @Size(max = 50)
+  @NotBlank
+  private String nickname;
+
+  @Size(max = 50)
+  @NotBlank
+  private String zoneCode;
+
+  @Size(max = 50)
+  @NotBlank
+  private String address;
+
+  @Size(max = 50)
+  @NotBlank
+  private String detailaddress;
+
+  @Size(max = 50)
+  @NotBlank
+  private String legalDong;
+
+  @Size(max = 50)
+  @NotBlank
+  private String phonenumber;
+
+  @Size(max = 50)
+  @NotBlank
+  private String residentnumber;
+
+
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(  name = "user_roles", 
         joinColumns = @JoinColumn(name = "user_id"), 
@@ -41,10 +77,19 @@ public class User {
   public User() {
   }
 
-  public User(String username, String email, String password) {
+  public User(String username, String email, String password, String usersId,
+  String nickname, String zoneCode, String address, String detailaddress, String legalDong, String phonenumber, String residentnumber) {
     this.username = username;
     this.email = email;
     this.password = password;
+    this.usersId = usersId;
+    this.nickname = nickname;
+    this.zoneCode = zoneCode;
+    this.address = address;
+    this.detailaddress = detailaddress;
+    this.legalDong = legalDong;
+    this.phonenumber = phonenumber;
+    this.residentnumber = residentnumber;
   }
 
   public Long getId() {
@@ -85,5 +130,65 @@ public class User {
 
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
+  }
+
+  public void setUsersId(String usersId) { this.usersId = usersId;}
+
+  public String getUsersId(){ return usersId;}
+
+  public String getNickname() {
+    return nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getDetailaddress() {
+    return detailaddress;
+  }
+
+  public void setDetailaddress(String detailaddress) {
+    this.detailaddress = detailaddress;
+  }
+
+  public String getPhonenumber() {
+    return phonenumber;
+  }
+
+  public void setPhonenumber(String phonenumber) {
+    this.phonenumber = phonenumber;
+  }
+
+  public String getResidentnumber() {
+    return residentnumber;
+  }
+
+  public void setResidentnumber(String residentnumber) {
+    this.residentnumber = residentnumber;
+  }
+
+  public String getZoneCode() {
+    return zoneCode;
+  }
+
+  public void setZoneCode(String zoneCode) {
+    this.zoneCode = zoneCode;
+  }
+
+  public String getLegalDong() {
+    return legalDong;
+  }
+
+  public void setLegalDong(String legalDong) {
+    this.legalDong = legalDong;
   }
 }

@@ -20,6 +20,47 @@ public class SignupRequest {
   @Size(min = 6, max = 40)
   private String password;
 
+
+  @Size(min = 2, max = 9)
+  @NotBlank
+  private String usersId;
+
+  @Size(min = 2, max = 20)
+  @NotBlank
+  private String nickname;
+
+  @Size(min = 2, max = 20)
+  @NotBlank
+  private String zoneCode;
+
+  @Size(min = 2, max = 20)
+  @NotBlank
+  private String address;
+
+  @Size(min = 2, max = 20)
+  @NotBlank
+  private String detailaddress;
+
+  @Size(min = 2, max = 20)
+  @NotBlank
+  private String legalDong;
+
+  @Size(min = 3, max = 20)
+  @NotBlank
+  private String phonenumber;
+
+  @Size(min = 13, max = 13)
+  @NotBlank
+  private String residentnumber;
+
+  public String getUsersId() {
+    return usersId;
+  }
+
+  public void setUsersId(String usersId) {
+    this.usersId = usersId;
+  }
+
   public String getUsername() {
     return username;
   }
@@ -50,5 +91,61 @@ public class SignupRequest {
 
   public void setRole(Set<String> role) {
     this.role = role;
+  }
+
+  public String getNickname() {
+    return nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getDetailaddress() {
+    return detailaddress;
+  }
+
+  public void setDetailaddress(String detailaddress) {
+    this.detailaddress = detailaddress;
+  }
+
+  public String getPhonenumber() {
+    return phonenumber;
+  }
+
+  public void setPhonenumber(String phonenumber) {
+    this.phonenumber = phonenumber;
+  }
+
+  public String getResidentnumber() {
+    return residentnumber;
+  }
+
+  public void setResidentnumber(String residentnumber) {
+    this.residentnumber = residentnumber;
+  }
+
+  public String getZoneCode() {
+    return zoneCode;
+  }
+
+  public void setZoneCode(String zoneCode) {
+    this.zoneCode = zoneCode;
+  }
+
+  public String getLegalDong() {
+    return legalDong;
+  }
+
+  public void setLegalDong(String legalDong) {
+    this.legalDong = legalDong;
   }
 }

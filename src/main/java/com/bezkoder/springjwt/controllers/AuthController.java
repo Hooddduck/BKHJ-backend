@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import antlr.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -69,6 +70,7 @@ public class AuthController {
             userDetails.getId(),
             userDetails.getUsername(),
             userDetails.getEmail(),
+
             roles));
   }
 
@@ -86,10 +88,19 @@ public class AuthController {
               .body(new MessageResponse("Error: Email is already in use!"));
     }
 
+
     // Create new user's account
     User user = new User(signUpRequest.getUsername(),
             signUpRequest.getEmail(),
-            encoder.encode(signUpRequest.getPassword()));
+            encoder.encode(signUpRequest.getPassword()),
+            signUpRequest.getUsersId(),
+            signUpRequest.getNickname(),
+            signUpRequest.getZoneCode(),
+            signUpRequest.getAddress(),
+            signUpRequest.getDetailaddress(),
+            signUpRequest.getLegalDong(),
+            signUpRequest.getPhonenumber(),
+            signUpRequest.getResidentnumber());
 
     Set<String> strRoles = signUpRequest.getRole();
     Set<Role> roles = new HashSet<>();
@@ -148,6 +159,13 @@ public class AuthController {
       existingUser.setUsername(user.getUsername());
       existingUser.setEmail(user.getEmail());
       existingUser.setPassword(encoder.encode(user.getPassword()));
+      existingUser.setUsersId(user.getUsersId());
+      existingUser.setNickname((user.getNickname()));
+      existingUser.setZoneCode(user.getZoneCode());
+      existingUser.setAddress(user.getAddress());
+      existingUser.setDetailaddress(user.getDetailaddress());
+      existingUser.setLegalDong(user.getLegalDong());
+      existingUser.setPhonenumber(user.getPhonenumber());
       userRepository.save(existingUser);
 
       return new ResponseEntity<>("Membership information updated successfully", HttpStatus.OK);
