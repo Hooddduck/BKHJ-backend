@@ -17,18 +17,19 @@ public class FileDB {
   private String name;
   private String type;
 
+
   @Lob
   private byte[] data;
 
   @ManyToOne
-  @JoinColumn(name = "board_id")
+  @JoinColumn(name = "board_id", referencedColumnName = "id")
   private Board board;
 
   public FileDB() {
   }
 
   public FileDB(Board board, String name, String type, byte[] data) {
-	this.board = board;  
+    this.board = board;
     this.name = name;
     this.type = type;
     this.data = data;
@@ -74,6 +75,3 @@ public class FileDB {
     this.board = board;
   }
 }
-
-
-

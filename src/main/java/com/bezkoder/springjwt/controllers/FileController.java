@@ -32,10 +32,11 @@ public class FileController {
   private FileStorageService storageService;
 
   @PostMapping("/upload")
-  public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
+  public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file,
+                                                    @RequestParam("boardId") Long boardId) {
     String message = "";
     try {
-      storageService.store(file);
+      FileDB fileDB = storageService.store(boardId, file);
 
       message = "Uploaded the file successfully: " + file.getOriginalFilename();
       return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
@@ -45,24 +46,26 @@ public class FileController {
     }
   }
 
+
+
   @GetMapping("/files")
   public ResponseEntity<List<ResponseFile>> getListFiles() {
     List<ResponseFile> files = storageService.getAllFiles().map(dbFile -> {
       String fileDownloadUri = ServletUriComponentsBuilder
-    		  .fromCurrentContextPath()
-    		    .pathSegment("api", "auth", "files", String.valueOf(dbFile.getId()))
-    		    .toUriString(); 
-    		   		  
+              .fromCurrentContextPath()
+              .pathSegment("api", "auth", "files", String.valueOf(dbFile.getId()))
+              .toUriString();
+
 //          .fromCurrentContextPath()
 //          .path("api/auth/files/")
 //          .path(dbFile.getId())
 //          .toUriString();
 
       return new ResponseFile(
-          dbFile.getName(),
-          fileDownloadUri,
-          dbFile.getType(),
-          dbFile.getData().length);
+              dbFile.getName(),
+              fileDownloadUri,
+              dbFile.getType(),
+              dbFile.getData().length);
     }).collect(Collectors.toList());
 
     return ResponseEntity.status(HttpStatus.OK).body(files);
@@ -72,19 +75,19 @@ public class FileController {
   public ResponseEntity<byte[]> getFileById(@PathVariable Long id) {
     FileDB fileDB = storageService.getFile(id);
 
-    
+
     if (fileDB != null) {
       return ResponseEntity.ok()
-          .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
-          .body(fileDB.getData());
+              .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
+              .body(fileDB.getData());
     } else {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
   }
-  @GetMapping("/files/{boardId}")
-  public ResponseEntity<List<FileDB>> getCommentsByBoardId(@PathVariable Long boardId) {
-      List<FileDB> files = storageService.getfileByBoardId(boardId);
-      return new ResponseEntity<>(files, HttpStatus.OK);
+  @GetMapping("/files/board/{boardId}")
+  public ResponseEntity<List<FileDB>> getFilesByBoardId(@PathVariable Long boardId) {
+    List<FileDB> files = storageService.getFilesByBoardId(boardId);
+    return new ResponseEntity<>(files, HttpStatus.OK);
   }
-  
+
 }

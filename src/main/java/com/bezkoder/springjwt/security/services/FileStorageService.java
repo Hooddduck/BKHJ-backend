@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bezkoder.springjwt.models.Board;
 import com.bezkoder.springjwt.models.FileDB;
 import com.bezkoder.springjwt.repository.FileDBRepository;
 
@@ -18,23 +19,27 @@ public class FileStorageService {
   @Autowired
   private FileDBRepository fileDBRepository;
 
-  public FileDB store(MultipartFile file) throws IOException {
+  public FileDB store(Long boardId, MultipartFile file) throws IOException {
     String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-    FileDB FileDB = new FileDB( null, fileName, file.getContentType(), file.getBytes());
+    FileDB fileDB = new FileDB();
+    fileDB.setBoard(new Board(boardId)); // 게시글 ID 설정
+    fileDB.setName(fileName);
+    fileDB.setType(file.getContentType());
+    fileDB.setData(file.getBytes());
 
-    return fileDBRepository.save(FileDB);
+    return fileDBRepository.save(fileDB);
   }
 
   public FileDB getFile(Long id) {
     return fileDBRepository.findById(id).get();
   }
-  
+
   public Stream<FileDB> getAllFiles() {
     return fileDBRepository.findAll().stream();
   }
-  
-  public List<FileDB> getfileByBoardId(Long boardId) {
-      return fileDBRepository.findByBoardId(boardId);
+
+  public List<FileDB> getFilesByBoardId(Long boardId) {
+    return fileDBRepository.findByBoardId(boardId);
   }
-  
+
 }
