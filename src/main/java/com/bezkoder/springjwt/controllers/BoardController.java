@@ -48,6 +48,4 @@ public class BoardController {
     public ResponseEntity<?> editBoard(@RequestBody Board board, @PathVariable Long id) {
         return new ResponseEntity<>(boardService.editBoard(board, id), HttpStatus.CREATED);
     }
-
-
 }

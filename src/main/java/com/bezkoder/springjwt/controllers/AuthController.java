@@ -100,7 +100,9 @@ public class AuthController {
             signUpRequest.getDetailaddress(),
             signUpRequest.getLegalDong(),
             signUpRequest.getPhonenumber(),
-            signUpRequest.getResidentnumber());
+            signUpRequest.getResidentnumber(),
+            signUpRequest.getAge(),
+            signUpRequest.getGender());
 
     Set<String> strRoles = signUpRequest.getRole();
     Set<Role> roles = new HashSet<>();
@@ -135,7 +137,7 @@ public class AuthController {
     user.setRoles(roles);
     userRepository.save(user);
 
-    return ResponseEntity.ok(new MessageResponse("성공적으로 가입되었습니다!"));
+    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
 
   @DeleteMapping("/delete/{id}")

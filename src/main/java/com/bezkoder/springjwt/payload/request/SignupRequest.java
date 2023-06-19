@@ -53,6 +53,14 @@ public class SignupRequest {
   @NotBlank
   private String residentnumber;
 
+  @Size(min = 1, max = 20)
+  @NotBlank
+  private String age;
+
+  @Size(min = 1, max = 10)
+  @NotBlank
+  private String gender;
+
   public String getUsersId() {
     return usersId;
   }
@@ -147,5 +155,21 @@ public class SignupRequest {
 
   public void setLegalDong(String legalDong) {
     this.legalDong = legalDong;
+  }
+
+  public String getGender() {
+    return gender;
+  }
+
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
+
+  public String getAge() {
+    return age;
+  }
+
+  public void setAge(String age) {
+    this.age = age;
   }
 }
