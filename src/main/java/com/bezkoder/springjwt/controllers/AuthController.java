@@ -137,7 +137,7 @@ public class AuthController {
     user.setRoles(roles);
     userRepository.save(user);
 
-    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    return ResponseEntity.ok(new MessageResponse("회원가입 되었습니다!"));
   }
 
   @DeleteMapping("/delete/{id}")

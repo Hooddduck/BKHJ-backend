@@ -41,5 +41,8 @@ public class FileStorageService {
   public List<FileDB> getFilesByBoardId(Long boardId) {
     return fileDBRepository.findByBoardId(boardId);
   }
+  public void deleteFile(Long id) {
+    fileDBRepository.deleteById(id);
+  }
 
 }

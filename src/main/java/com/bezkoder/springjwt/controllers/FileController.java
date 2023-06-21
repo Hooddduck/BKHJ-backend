@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -88,6 +89,16 @@ public class FileController {
   public ResponseEntity<List<FileDB>> getFilesByBoardId(@PathVariable Long boardId) {
     List<FileDB> files = storageService.getFilesByBoardId(boardId);
     return new ResponseEntity<>(files, HttpStatus.OK);
+  }
+
+  @DeleteMapping("/files/{id}")
+  public ResponseEntity<String> deleteFile(@PathVariable Long id) {
+    try {
+      storageService.deleteFile(id);
+      return ResponseEntity.ok("File deleted successfully");
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete file");
+    }
   }
 
 }
