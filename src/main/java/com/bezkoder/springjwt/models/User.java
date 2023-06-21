@@ -56,7 +56,6 @@ public class User {
   private String detailaddress;
 
   @Size(max = 50)
-  @NotBlank
   private String legalDong;
 
   @Size(max = 50)

@@ -41,8 +41,7 @@ public class SignupRequest {
   @NotBlank
   private String detailaddress;
 
-  @Size(min = 2, max = 20)
-  @NotBlank
+  @Size(min = 0, max = 20)
   private String legalDong;
 
   @Size(min = 3, max = 20)
