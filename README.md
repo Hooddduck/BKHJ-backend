@@ -6,13 +6,13 @@
 ###### 이 프로젝트를 통해 이루고자 한 목표는 Spring과 react에 연동 방식 및 Python의 라이브러리 및 프레임워크를 직접 사용해 보려고 하였습니다.
 ###### 프로젝트 구현 과정 동안 회원 인증/인가, Rest api 연동 및 Python의 Data 수집 및 react와 연결을 고민하며 코드를 작성하였습니다.
 
-## Spring Boot Server Architecture with Spring Security
-You can have an overview of our Spring Boot Server with the diagram below:
+## ✨ 접근 방식
 
-![spring-boot-jwt-authentication-spring-security-architecture](spring-boot-jwt-authentication-spring-security-architecture.png)
+#### 과정1 : React + java + SpringBoot + JPA + DB [my sql ]기반의 웹어플리케이션 개발
 
-For more detail, please visit:
-> [Secure Spring Boot App with Spring Security & JWT Authentication](https://bezkoder.com/spring-boot-jwt-authentication/)
+#### 과정2: Python 기반의 데이터분석: 수집(web scraping) + 정제(numpy,pandas) + 분석 + 시각화(ELK)
+
+#### 과정3: Python 기반의 데이터 예측: AI 알고리즘 [ex)선형회귀, 로지스틱 회귀, DNN]을 활용하여 데이터 예측 시스템 구축
 
 > [For MongoDB](https://bezkoder.com/spring-boot-jwt-auth-mongodb/)
 
