@@ -24,9 +24,10 @@
 
 - STACKS
 - 구현 기능
+- ERD 설계
 - 구현 화면 및 설명
 - Python 기반의 데이터 분석 및 예측
-- ERD 모델
+- 자체 평가 의견
 
 ## 📚 STACKS
 
@@ -64,6 +65,9 @@
   - 게시글 작성/수정/삭제
   - 댓글 기능
   - 첨부 파일 기능
+
+## 🪄 ERD 설계    
+![ERD](https://github.com/Hooddduck/BKHJ-backend/assets/125169764/f1bd871a-e52d-491b-8da9-296e0dfba2f7)
 
 ## ✅ 구현 화면 및 설명
 
@@ -108,6 +112,9 @@ https://github.com/Hooddduck/BKHJ-backend/assets/125169764/7aa835d3-5248-4c74-9e
 
 ## 👌 Python 기반의 데이터 분석 및 예측
 
+### ✔️ Python 기반의 데이터 분석 및 예측 구현 화면
+https://github.com/Hooddduck/BKHJ-backend/assets/125169764/ca4a6d08-45b5-41c9-9a3d-c71bf72297c8
+
 ### (1) Data 수집
 ##### 저희 프로젝트의 목표 중 하나는 대출 상품을 비교하는 서비스를 제공하는 것입니다. 
 ###### 이를 위해 공공데이터 포털 사이트([https://www.data.go.kr/data/15074500/openapi.do])에서 해당 데이터를 다운로드하여 사용했습니다.
@@ -131,5 +138,10 @@ https://github.com/Hooddduck/BKHJ-backend/assets/125169764/7aa835d3-5248-4c74-9e
 
 ##### 코드 확인 [AI Python 코드]
 [AI예측.txt](https://github.com/Hooddduck/BKHJ-backend/files/11928882/AI.txt)
+
+## 😺 자체 평가 의견
+### 팀원들과 함께 Spring Boot, React, Python, 그리고 ELK(엘라스틱서치, 로그스태시, 키바나)를 사용하면서 다양한 경험을 쌓았습니다. 이를 통해 서버 공유에 대해 얼마나 열심히 공부해야하는지 깨달았고, 데이터 분석과 정제의 중요성을 인지했습니다. 특히, 데이터를 분석하고 정제하는 과정에서 DB에 대한 공부 필요성을 더욱 느끼게 되었습니다.
+### 지금까지 저의 글을 읽어주셔서 정말 감사합니다 🙋‍♀️
+
 
 
