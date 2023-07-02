@@ -5,7 +5,7 @@
 ###### 프로젝트 기간은 2023년 5월 2일부터 6월 26일까지이며, Spring Boot, React, 그리고 Python을 사용하여 구현했습니다.
 ###### 이 프로젝트의 목표는 Spring과 React를 효과적으로 연동하는 방법을 경험하고, Python의 라이브러리와 프레임워크를 직접 활용해 보는 것입니다.
 ###### 프로젝트를 진행하면서 회원 인증/인가, Rest API 연동, 그리고 Python을 활용한 데이터 수집과 React와의 연결에 대한 고민을 하며 코드를 작성했습니다.
-
+#### 구현 영상 유투브 https://www.youtube.com/watch?v=mKPWsGN8HYI
 ## ✨ 저희 프로젝트는 세 가지 과정으로 구성되어 있습니다.
 
 #### 과정1 : React + java + SpringBoot + JPA + DB [my sql ]기반의 웹어플리케이션 개발
