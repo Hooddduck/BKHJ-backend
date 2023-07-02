@@ -20,9 +20,9 @@
 
 ###### 과정3는 파이썬을 통해서 데이터를 훈련시켜, 회원에 맞는 대출 상품을 추천하게 만들었습니다.
 
-For instruction: [Spring Boot Refresh Token with JWT example](https://bezkoder.com/spring-boot-refresh-token-jwt/)
+## 📚 목차
 
-## More Practice:
+- 사용 기술
 > [Spring Boot File upload example with Multipart File](https://bezkoder.com/spring-boot-file-upload/)
 
 > [Exception handling: @RestControllerAdvice example in Spring Boot](https://bezkoder.com/spring-boot-restcontrolleradvice/)
