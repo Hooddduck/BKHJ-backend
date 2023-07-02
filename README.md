@@ -34,97 +34,49 @@
 
 ### Back-end
 
++ JAVA (11)
++ MAVEN
++ jjwt (0.9.1)
++ JPA
++ React
++ Python (3.11.3)
++ Flask
++ ELK
++ mysql
 
-> [Spring Boot File upload example with Multipart File](https://bezkoder.com/spring-boot-file-upload/)
+## ✴️ 구현기능
 
-> [Exception handling: @RestControllerAdvice example in Spring Boot](https://bezkoder.com/spring-boot-restcontrolleradvice/)
+* **회원 기능**
+  - Spring Security,jwt
+  - 로그인/로그아웃
+  - 회원가입/탈퇴, 회원정보 수정
+    
+* **게시판 기능**
+  - 게시글 작성/수정/삭제
+  - 첨부 파일 기능
+  - 댓글 기능
 
-> [Spring Boot Repository Unit Test with @DataJpaTest](https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/)
+## ✅ 구현기능 설명
 
-> [Spring Boot Pagination & Sorting example](https://www.bezkoder.com/spring-boot-pagination-sorting-example/)
+### (1) 회원기능
 
-Associations:
-> [Spring Boot One To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-one-to-many/)
-
-> [Spring Boot Many To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-many-to-many/)
-
-> [JPA One To One example with Spring Boot](https://www.bezkoder.com/jpa-one-to-one/)
-
-Deployment:
-> [Deploy Spring Boot App on AWS – Elastic Beanstalk](https://www.bezkoder.com/deploy-spring-boot-aws-eb/)
-
-> [Docker Compose Spring Boot and MySQL example](https://www.bezkoder.com/docker-compose-spring-boot-mysql/)
-
-## Fullstack Authentication
-
-> [Spring Boot + Vue.js JWT Authentication](https://bezkoder.com/spring-boot-vue-js-authentication-jwt-spring-security/)
-
-> [Spring Boot + Angular 8 JWT Authentication](https://bezkoder.com/angular-spring-boot-jwt-auth/)
-
-> [Spring Boot + Angular 10 JWT Authentication](https://bezkoder.com/angular-10-spring-boot-jwt-auth/)
-
-> [Spring Boot + Angular 11 JWT Authentication](https://bezkoder.com/angular-11-spring-boot-jwt-auth/)
-
-> [Spring Boot + Angular 12 JWT Authentication](https://www.bezkoder.com/angular-12-spring-boot-jwt-auth/)
-
-> [Spring Boot + Angular 13 JWT Authentication](https://www.bezkoder.com/angular-13-spring-boot-jwt-auth/)
-
-> [Spring Boot + Angular 14 JWT Authentication](https://www.bezkoder.com/angular-14-spring-boot-jwt-auth/)
-
-> [Spring Boot + React JWT Authentication](https://bezkoder.com/spring-boot-react-jwt-auth/)
-
-## Fullstack CRUD App
-
-> [Vue.js + Spring Boot + H2 Embedded database example](https://www.bezkoder.com/spring-boot-vue-js-crud-example/)
-
-> [Vue.js + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-vue-js-mysql/)
-
-> [Vue.js + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-vue-js-postgresql/)
-
-> [Angular 8 + Spring Boot + Embedded database example](https://www.bezkoder.com/angular-spring-boot-crud/)
-
-> [Angular 8 + Spring Boot + MySQL example](https://bezkoder.com/angular-spring-boot-crud/)
-
-> [Angular 8 + Spring Boot + PostgreSQL example](https://bezkoder.com/angular-spring-boot-postgresql/)
-
-> [Angular 10 + Spring Boot + MySQL example](https://bezkoder.com/angular-10-spring-boot-crud/)
-
-> [Angular 10 + Spring Boot + PostgreSQL example](https://bezkoder.com/angular-10-spring-boot-postgresql/)
-
-> [Angular 11 + Spring Boot + MySQL example](https://bezkoder.com/angular-11-spring-boot-crud/)
-
-> [Angular 11 + Spring Boot + PostgreSQL example](https://bezkoder.com/angular-11-spring-boot-postgresql/)
-
-> [Angular 12 + Spring Boot + Embedded database example](https://www.bezkoder.com/angular-12-spring-boot-crud/)
-
-> [Angular 12 + Spring Boot + MySQL example](https://www.bezkoder.com/angular-12-spring-boot-mysql/)
-
-> [Angular 12 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/angular-12-spring-boot-postgresql/)
-
-> [Angular 13 + Spring Boot + H2 Embedded Database example](https://www.bezkoder.com/spring-boot-angular-13-crud/)
-
-> [Angular 13 + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-angular-13-mysql/)
-
-> [Angular 13 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-angular-13-postgresql/)
-
-> [Angular 14 + Spring Boot + H2 Embedded Database example](https://www.bezkoder.com/spring-boot-angular-14-crud/)
-
-> [Angular 14 + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-angular-14-mysql/)
-
-> [Angular 14 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-angular-14-postgresql/)
-
-> [React + Spring Boot + MySQL example](https://bezkoder.com/react-spring-boot-crud/)
-
-> [React + Spring Boot + PostgreSQL example](https://bezkoder.com/spring-boot-react-postgresql/)
-
-> [React + Spring Boot + MongoDB example](https://bezkoder.com/react-spring-boot-mongodb/)
-
-Run both Back-end & Front-end in one place:
-> [Integrate Angular with Spring Boot Rest API](https://bezkoder.com/integrate-angular-spring-boot/)
-
-> [Integrate React.js with Spring Boot Rest API](https://bezkoder.com/integrate-reactjs-spring-boot/)
-
-> [Integrate Vue.js with Spring Boot Rest API](https://bezkoder.com/integrate-vue-spring-boot/)
+**- Spring Security -**
+###### # WebSecurityConfigurerAdapter은 Spring Security에서 보안 구현을 담당하는 핵심 클래스입니다.
+###### # UserDetailsService를 통해 사용자 정보를 로드하고, UsernamePasswordAuthenticationToken을 사용하여 로그인 요청을 인증합니다.
+###### # OncePerRequestFilter를 사용하여 JWT 유효성을 검사하고, 인증된 사용자의 세부 정보를 로드하고 권한을 확인합니다.
+###### # AuthenticationEntryPoint는 인증되지 않은 액세스에 대한 오류를 처리하고 401을 반환합니다.
+###### # Repository는 데이터베이스 작업을 처리하는 UserRepository와 RoleRepository를 포함합니다.
+###### # Controller는 요청을 처리하며, AuthController는 회원 가입 및 로그인을 처리하고, TestController에는 역할 기반 검증이 있는 보호된 리소스에 액세스하는 메서드가 있습니다.
+###### # WebSecurityConfig은 SecurityFilterChain filterChain을 확장합니다.
+###### # UserDetailsServiceImpl은 UserDetailsService를 구현합니다.
+###### # UserDetailsImpl은 UserDetails를 구현합니다.
+###### # AuthEntryPointJwt는 AuthenticationEntryPoint를 구현합니다.
+###### # AuthTokenFilter는 OncePerRequestFilter를 확장합니다.
+###### # JwtUtils는 JWT 생성, 구문 분석, 유효성 검사를 위한 메서드를 제공합니다.
+###### # 컨트롤러는 회원 가입/로그인 요청 및 인증된 요청을 처리합니다.
+###### # 리포지토리에는 Spring Data JPA JpaRepository를 확장하는 인터페이스가 있습니다.
+###### # 모델은 인증(User) 및 권한(Role)을 위한 두 가지 주요 모델을 정의합니다.
+###### # 페이로드는 요청 및 응답 객체를 위한 클래스를 정의하고 application.properties 파일을 사용하여 Spring Datasource, Spring Data JPA 및 앱 속성을 구성합니다.
 
 ## Dependency
 – If you want to use PostgreSQL:
