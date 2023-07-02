@@ -14,11 +14,11 @@
 
 #### 과정3: Python 기반의 데이터 예측: AI 알고리즘 [ex)선형회귀, 로지스틱 회귀, DNN]을 활용하여 데이터 예측 시스템 구축
 
-> [For MongoDB](https://bezkoder.com/spring-boot-jwt-auth-mongodb/)
+###### 언어는 Java를 사용하였으며, 회원과 게시판 기능은 React 및 Springboot를 통해서 구현하였습니다.
 
-## Refresh Token
+###### 또한, 과정2는 Python을 통해서 공공Api에 접근하여 데이터를 수집 및 정제하고, ELk를 통해서 해당 부분을 시각화하여 React로 다시 보여지도록 설정하였습니다
 
-![spring-boot-refresh-token-jwt-example-flow](spring-boot-refresh-token-jwt-example-flow.png)
+###### 과정3는 파이썬을 통해서 데이터를 훈련시켜, 회원에 맞는 대출 상품을 추천하게 만들었습니다.
 
 For instruction: [Spring Boot Refresh Token with JWT example](https://bezkoder.com/spring-boot-refresh-token-jwt/)
 
