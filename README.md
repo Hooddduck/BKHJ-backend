@@ -30,6 +30,10 @@
 - Python 기반의 데이터 예측
 - ERD 모델
 
+## 🕹 사용 기술
+
+### Back-end
+
 
 > [Spring Boot File upload example with Multipart File](https://bezkoder.com/spring-boot-file-upload/)
 
