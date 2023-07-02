@@ -1,6 +1,6 @@
 ## 👋 안녕하세요! 환영합니다! 저희 프로젝트 관련 설명드리도록 하겠습니다.
 
-## User Registration, User Login and Authorization process.
+#### 대출상품 추천 웹 애플리케이션 프로젝트 입니다.
 The diagram shows flow of how we implement User Registration, User Login and Authorization process.
 
 ![spring-boot-jwt-authentication-spring-security-flow](spring-boot-jwt-authentication-spring-security-flow.png)
