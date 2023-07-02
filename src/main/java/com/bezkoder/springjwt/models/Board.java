@@ -21,7 +21,7 @@ public class Board {
 	private String regdate;
 	private Long totalPages;
 	private Long totalCounts;
-	private int viewCount;
+	private double viewCount;
 
 	@OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<FileDB> files;
@@ -95,11 +95,11 @@ public class Board {
 		this.totalCounts = totalCounts;
 	}
 
-	public int getViewCount() {
+	public double getViewCount() {
 		return viewCount;
 	}
 
-	public void setViewCount(int viewCount) {
+	public void setViewCount(double viewCount) {
 		this.viewCount = viewCount;
 	}
 }

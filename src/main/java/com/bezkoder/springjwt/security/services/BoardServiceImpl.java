@@ -56,7 +56,7 @@ public class BoardServiceImpl implements BoardService {
 	public void updateViewCount(Long id) {
 		Board board = boardRepo.findById(id).get();
 		if (board != null) {
-			board.setViewCount(board.getViewCount() + 1);
+			board.setViewCount(board.getViewCount() + 0.5); // Increment by 0.5
 			boardRepo.save(board);
 		}
 	}
