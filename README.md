@@ -23,6 +23,14 @@
 ## 📚 목차
 
 - 사용 기술
+- 프로젝트 구조
+- 구현 기능
+- 구현 설명 및 화면
+- Python 기반의 데이터 분석
+- Python 기반의 데이터 예측
+- ERD 모델
+
+
 > [Spring Boot File upload example with Multipart File](https://bezkoder.com/spring-boot-file-upload/)
 
 > [Exception handling: @RestControllerAdvice example in Spring Boot](https://bezkoder.com/spring-boot-restcontrolleradvice/)
