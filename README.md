@@ -78,6 +78,11 @@
 ###### # 모델은 인증(User) 및 권한(Role)을 위한 두 가지 주요 모델을 정의합니다.
 ###### # 페이로드는 요청 및 응답 객체를 위한 클래스를 정의하고 application.properties 파일을 사용하여 Spring Datasource, Spring Data JPA 및 앱 속성을 구성합니다.
 
+
+https://github.com/Hooddduck/BKHJ-backend/assets/125169764/20bde107-e186-4225-9bc1-6e4f48be3731
+
+
+
 ## Dependency
 – If you want to use PostgreSQL:
 ```xml
